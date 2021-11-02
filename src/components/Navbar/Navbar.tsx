@@ -113,6 +113,7 @@ function Navbar(props: any) {
                         History
                       </Text>
                     </Stack>
+
                     <hr />
                     <Stack
                       cursor='pointer'
@@ -148,6 +149,18 @@ function Navbar(props: any) {
                 history.push('/history');
               }}>
               History
+            </Link>
+          </HStack>
+          <HStack
+            pl='10'
+            fontSize={'lg'}
+            spacing='5'
+            display={{ base: 'none', md: 'flex' }}>
+            <Link
+              onClick={() => {
+                history.push('/profile/123');
+              }}>
+              Profile
             </Link>
           </HStack>
         </Flex>

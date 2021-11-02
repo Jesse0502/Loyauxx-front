@@ -134,34 +134,33 @@ function Home() {
           ))}
         </Stack>
       </Box>
-      <Box mt='10' bg='main' color='white'>
-        <Heading px='32' py='5' fontSize={'5xl'}>
-          How music competitions can increase your brand awareness?
+      <Box mt='16' bg='mainLight' color='blackAlpha.800' py='16'>
+        <Heading px='32' fontSize={'5xl'}>
+          How our music competitions can increase your brand awareness?
         </Heading>
-        {Array.from(Array(3)).map(() => (
-          <Stack
-            justify='center'
-            px='32'
-            mt='10'
-            py='5'
-            alignItems={'center'}
-            spacing='10'
-            direction={'row'}>
-            <Image src={djNight} w='96' rounded='2xl'></Image>
-            <Stack direction={'column'} spacing='4'>
-              <Heading>Discoverability</Heading>
-              <Text>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error
-                omnis commodi reprehenderit repellendus odio distinctio quasi at
-                fugit impedit ab quas quisquam vitae a quidem itaque, natus
-                mollitia neque rerum qui quibusdam magnam beatae delectus?
-                Omnis, provident itaque nihil rem sapiente, quisquam eligendi
-                sit cumque quas deleniti, dignissimos dolores! Veritatis!
-              </Text>
-              <Link color='whiteAlpha.700'>Know more</Link>
+        <Box py='10'>
+          {Array.from(Array(3)).map(() => (
+            <Stack
+              mt='10'
+              justify='center'
+              px='32'
+              alignItems={'center'}
+              spacing='10'
+              direction={'row-reverse'}>
+              <Image src={djNight} w='72' rounded='2xl'></Image>
+              <Stack direction={'column'} spacing='4'>
+                <Heading>Discoverability</Heading>
+                <Text>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Error omnis commodi reprehenderit repellendus odio distinctio
+                  quasi at fugit que quas deleniti, dignissimos dolores!
+                  Veritatis!
+                </Text>
+                <Link color='blackAlpha.700'>Know more</Link>
+              </Stack>
             </Stack>
-          </Stack>
-        ))}
+          ))}
+        </Box>
       </Box>
       <Stack px='32' my='20'>
         <Heading fontSize='5xl'>Next competition starts in...</Heading>

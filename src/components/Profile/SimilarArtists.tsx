@@ -16,9 +16,9 @@ import { useLocation } from 'react-router-dom';
 import { BsThreeDots } from 'react-icons/bs';
 function SimilarArtists() {
   return (
-    <Box pos='relative' w='23em' m='auto'>
+    <Box pos='fixed' w='23%' ml='3'>
       <Box>
-        <Heading color='blackAlpha.700' py='3' fontSize='3xl'>
+        <Heading color='blackAlpha.700' py='3' fontSize='200%'>
           Similar artists
         </Heading>
 

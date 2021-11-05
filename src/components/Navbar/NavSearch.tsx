@@ -26,7 +26,7 @@ function NavSearch(props: any) {
         bg={!props.drawer ? 'whiteAlpha.200' : 'transparent'}
         border={'2px'}
         alignItems={'center'}
-        borderColor={!props.drawer ? 'whiteAlpha.600' : 'main'}>
+        borderColor={!props.drawer ? 'whiteAlpha.600' : 'blackAlpha.600'}>
         <InputLeftElement
           fontFamily={'heading'}
           fontSize={'2xl'}

@@ -15,6 +15,7 @@ import {
   Button,
   VStack,
 } from '@chakra-ui/react';
+import './Home.css';
 import { BsArrowRight } from 'react-icons/bs';
 import djNight from '../../assets/djNight.jpg';
 import { BiLinkExternal } from 'react-icons/bi';
@@ -133,11 +134,12 @@ function Home() {
             </Box>
           ))}
         </Stack>
-      </Box>
+      </Box>{' '}
       <Box mt='16' bg='mainLight' color='blackAlpha.800' py='16'>
         <Heading px='32' fontSize={'5xl'}>
           How our music competitions can increase your brand awareness?
         </Heading>
+
         <Box py='10'>
           {Array.from(Array(3)).map(() => (
             <Stack

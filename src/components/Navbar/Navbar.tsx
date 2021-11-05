@@ -40,7 +40,7 @@ function Navbar(props: any) {
   const history = useHistory();
 
   return (
-    <Box pos='relative' h='8vh' zIndex='999' w='100%'>
+    <Box pos='relative' bg='main' h='8vh' zIndex='999' w='100%'>
       <Flex
         h='8vh'
         pos='fixed'
@@ -70,7 +70,8 @@ function Navbar(props: any) {
             <Drawer isOpen={isOpen} placement='left' onClose={onClose}>
               <DrawerOverlay />
               <DrawerContent>
-                {/* <DrawerCloseButton /> */}
+                <DrawerCloseButton color='white'></DrawerCloseButton>
+
                 <DrawerHeader
                   as={Flex}
                   objectFit={'cover'}
@@ -114,23 +115,6 @@ function Navbar(props: any) {
                       </Text>
                     </Stack>
 
-                    <hr />
-                    <Stack
-                      cursor='pointer'
-                      direction={'row'}
-                      alignItems={'center'}>
-                      <FiLogIn size='28' color='#313033' />
-                      <Text
-                        fontSize={'2xl'}
-                        onClick={() => {
-                          history.push('/signup');
-                        }}
-                        fontWeight={
-                          location.pathname === '/signup' ? 'bold' : ''
-                        }>
-                        Signup
-                      </Text>
-                    </Stack>
                     <Box pt='3'>
                       <NavSearch drawer={true} />
                     </Box>

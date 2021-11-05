@@ -46,7 +46,7 @@ function Navbar(props: any) {
         pos='fixed'
         top='0'
         shadow='lg'
-        px={{ lg: '10', base: '5' }}
+        px={{ base: '5', md: '10' }}
         w='full'
         justify={'space-between'}
         alignItems={'center'}
@@ -54,7 +54,7 @@ function Navbar(props: any) {
         color='bgText'>
         <Flex>
           <Text
-            display={{ md: 'block', base: 'none' }}
+            display={{ base: 'none', md: 'block' }}
             onClick={() => {
               history.push('/');
             }}
@@ -102,16 +102,16 @@ function Navbar(props: any) {
                       cursor='pointer'
                       direction={'row'}
                       alignItems={'center'}>
-                      <FaHistory size='24' color='#313033' />
+                      {/* <User size='24' color='#313033' /> */}
                       <Text
                         fontSize={'2xl'}
                         onClick={() => {
-                          history.push('/history');
+                          history.push('/profile/123');
                         }}
                         fontWeight={
                           location.pathname === '/history' ? 'bold' : ''
                         }>
-                        History
+                        Profile
                       </Text>
                     </Stack>
 

@@ -20,6 +20,7 @@ function ProfileStats(props: any) {
   return (
     <>
       <Box px='7' className='scrollBar' overflow={'auto'}>
+        <Heading color='blackAlpha.800'>Current Rank : 23</Heading>
         <Stack>
           <Heading fontSize='4xl' color='blackAlpha.800'>
             Competitions participated (4)

@@ -21,7 +21,7 @@ import {
 import { ImCross } from 'react-icons/im';
 import { BiLinkExternal } from 'react-icons/bi';
 import { BsArrowRight } from 'react-icons/bs';
-import djNight from '../../assets/djNight.jpg';
+import djNight from '../../assets/Group12.png';
 import Footer from '../Footer/Footer';
 import ProfileStats from './ProfileStats';
 import { FaLink } from 'react-icons/fa';
@@ -39,28 +39,38 @@ function Profile(props: any) {
   return (
     <>
       <Stack direction='row' spacing='0'>
-        <Box flex='1' minH='112vh'>
+        <Box flex='1'>
           <Navigation setProfileNav={setProfileNav} current={profileNav} />
         </Box>
-        <Box flex='5'>
+        <Box flex='6'>
           {profileNav == 'Profile' && (
-            <>
-              <Image src={djNight} h='32vh' w='full' objectFit={'cover'} />
-              <Box pos='relative' px='10'>
-                <Avatar pos='absolute' size={'2xl'} top='-16' left='10' />
+            <Box>
+              <Image src={djNight} h={'32vh'} w='full' objectFit={'cover'} />
+              <Box pos='relative' px={{ lg: '10', base: '5' }}>
+                <Avatar
+                  pos='absolute'
+                  size={'2xl'}
+                  top='-16'
+                  left={{ lg: '10', base: '5' }}
+                />
                 <Flex>
                   <Stack pt='16' pb='5' spacing='3'>
-                    <Heading fontSize='5xl'>Name</Heading>
-                    <Text>@username</Text>
-                    <Text>
+                    <Heading fontSize={{ lg: '5xl', base: '5xl' }}>
+                      Name
+                    </Heading>
+                    <Text color='blackAlpha.700'>@username</Text>
+                    <Text fontSize={{ base: 'md', md: 'lg' }}>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Deleniti tempore consectetur illum adipisci odio
                       voluptatem sint incidunt cumque? vitae possimus harum
                       molestias culpa sit eum expedita modi officia?
                     </Text>
                     <HStack alignItems={'center'}>
-                      <FaLink color='#474747' size='' />
+                      <Box display={{ base: 'none', md: 'block' }}>
+                        <FaLink color='#474747' size='' />
+                      </Box>
                       <Link
+                        fontSize={{ base: 'md', md: 'lg' }}
                         color='blue.600'
                         to={'https://github.com/Jesse0502/Loyauxx-front'}>
                         https://github.com/Jesse0502/Loyauxx-front
@@ -70,7 +80,7 @@ function Profile(props: any) {
                 </Flex>
               </Box>
               <Tabs mt='5' isFitted variant='enclosed'>
-                <TabList mb='1em'>
+                <TabList>
                   <Tab>Tracks</Tab>
                   <Tab>Top Tracks</Tab>
                 </TabList>
@@ -83,11 +93,21 @@ function Profile(props: any) {
                   </TabPanel>
                 </TabPanels>
               </Tabs>{' '}
-            </>
+            </Box>
           )}
           {profileNav === 'Stats' && <ProfileStats />}
           {profileNav === 'Submit your track' && <Submit />}
           {profileNav === 'Settings' && <Settings />}
+          <Text
+            zIndex={'0'}
+            bg='main'
+            color='white'
+            w='85.7%'
+            pos='absolute'
+            bottom='0'
+            textAlign={'center'}>
+            Loyauxx.com
+          </Text>
         </Box>
       </Stack>
     </>

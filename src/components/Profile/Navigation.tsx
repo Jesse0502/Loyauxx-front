@@ -27,13 +27,13 @@ import { BsSpotify } from 'react-icons/bs';
 import { AiFillYoutube } from 'react-icons/ai';
 function Navigation(props: any) {
   return (
-    <Box pos='relative' h='92vh' w='full'>
+    <Box pos='relative' h='92vh' w='full' zIndex={'1'}>
       <Stack
         pos='fixed'
         h='92vh'
         overflowX={'hidden'}
         overflowWrap={'anywhere'}
-        w='17%'
+        w='14.5%'
         bg='wall'
         pt='7'>
         {[

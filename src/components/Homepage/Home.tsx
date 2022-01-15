@@ -35,8 +35,10 @@ import djImage from "../../assets/unsplashDJ3.jpg";
 import { useHistory } from "react-router-dom";
 import HomepageStats from "./HomepageStats";
 import { homeData } from "../../api/indexApi";
+import useAuth from "../../customHooks/useAuth";
 
 function Home() {
+	const { authInfo } = useAuth();
 	useEffect(() => {
 		const fetchData = async () => {
 			let data = await homeData();
@@ -76,35 +78,37 @@ function Home() {
 						We Conduct music competitions to help grow your brand as an artist.{" "}
 						<br /> Sign up today to participate and win amazing prizes!
 					</Text>
-					<Button
-						_hover={{ bg: "main", color: "mainLight" }}
-						_active={{ bg: "mainLight", color: "main" }}
-						bg={"main"}
-						onMouseOverCapture={() => {
-							setSignupButtonHover(true);
-						}}
-						onMouseLeave={() => {
-							setSignupButtonHover(false);
-						}}
-						w="40"
-						onClick={() => {
-							history.push("/signup");
-						}}
-						mt="5">
-						<Stack spacing="2" direction="row" alignItems={"center"}>
-							<Text fontWeight={"light"}>Signup</Text>
-							<motion.div
-								initial={signupButtonHover ? "hidden" : "visible"}
-								animate={signupButtonHover ? "visible" : "hidden"}
-								variants={variants}>
-								<CgLogIn size="20" />
-							</motion.div>
-						</Stack>
-					</Button>
+					{authInfo ? null : (
+						<Button
+							_hover={{ bg: "main", color: "mainLight" }}
+							_active={{ bg: "mainLight", color: "main" }}
+							bg={"main"}
+							onMouseOverCapture={() => {
+								setSignupButtonHover(true);
+							}}
+							onMouseLeave={() => {
+								setSignupButtonHover(false);
+							}}
+							w="40"
+							onClick={() => {
+								history.push("/signup");
+							}}
+							mt="5">
+							<Stack spacing="2" direction="row" alignItems={"center"}>
+								<Text fontWeight={"light"}>Signup</Text>
+								<motion.div
+									initial={signupButtonHover ? "hidden" : "visible"}
+									animate={signupButtonHover ? "visible" : "hidden"}
+									variants={variants}>
+									<CgLogIn size="20" />
+								</motion.div>
+							</Stack>
+						</Button>
+					)}
 				</Box>
 			</Box>
 			{/* <HomepageStats /> */}
-			<Box px="32" pt="20">
+			<Box px="32" pt="20" color="blackAlpha.800" bg="mainLight">
 				<Heading fontSize={"5xl"}>What is Loyauxx?</Heading>
 				<Box p="4" bg="mainLight" rounded="2xl" mt="5">
 					<Text pb="4" color="blackAlpha.800">
@@ -146,7 +150,7 @@ function Home() {
 					))}
 				</Stack>
 			</Box>{" "}
-			<Box mt="16" bg="mainLight" color="blackAlpha.800" py="16">
+			<Box mt="16" color="blackAlpha.800" bg="mainLight" py="16">
 				<Heading px="32" fontSize={"5xl"}>
 					How our music competitions can increase your brand awareness?
 				</Heading>

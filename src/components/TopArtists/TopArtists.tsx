@@ -1,12 +1,36 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Box } from "@chakra-ui/react";
+import {
+	Box,
+	Container,
+	Flex,
+	Heading,
+	HStack,
+	Image,
+	Text,
+	VStack,
+} from "@chakra-ui/react";
+import djNight from "../../assets/djNight.jpg";
 
 const TopArtists = () => {
 	return (
-		<Box>
+		<Container maxW="container.lg">
 			<h1>Top Artists</h1>
-		</Box>
+			<Flex flexDir={"column"} w="full">
+				{Array.from(Array(20)).map((a, b) => (
+					<>
+						<HStack border="2px solid" borderColor={"blackAlpha.600"}>
+							<Heading>{b + 1}</Heading>
+							<Image h="20" src={djNight}></Image>
+							<Flex flexDir={"column"}>
+								<Heading>Artist Name</Heading>
+								<Text>@username</Text>
+							</Flex>
+						</HStack>
+					</>
+				))}
+			</Flex>
+		</Container>
 	);
 };
 

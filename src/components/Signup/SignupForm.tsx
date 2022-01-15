@@ -17,10 +17,12 @@ import { signup } from "../../api/indexApi";
 
 function SignupForm(props: any) {
 	const [errorMsg, setErrorMsg] = useState("");
+	const [buttonDisable, setButtonDisable] = useState(false);
 
 	const handleSignupSubmit = async (e: any) => {
 		setErrorMsg("");
 		e.preventDefault();
+		setButtonDisable(true);
 		const userData = {
 			name: e.target[0].value,
 			username: e.target[1].value,
@@ -32,8 +34,11 @@ function SignupForm(props: any) {
 			setErrorMsg("Passwords must be same!");
 			return;
 		}
+
 		let signupData = await signup(userData);
 		if (signupData.msg !== "Signup successful") {
+			setButtonDisable(false);
+
 			setErrorMsg(signupData.msg);
 			return;
 		}
@@ -103,9 +108,10 @@ function SignupForm(props: any) {
 					_hover={{ bg: "main" }}
 					_active={{ bg: "main" }}
 					type="submit"
+					isDisabled={buttonDisable}
 					bg="main"
 					color="bgText">
-					Signup
+					{!buttonDisable ? "Signup" : "Signing up..."}
 				</Button>
 				<Text color={"red"}>{errorMsg}</Text>
 			</form>

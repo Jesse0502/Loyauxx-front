@@ -9,6 +9,8 @@ import Signup from "./components/Signup/Signup";
 import ScrollToTop from "./components/utils/ScrollToTop";
 import TopArtists from "./components/TopArtists/TopArtists";
 import NotFoundPage from "./components/404/404";
+import jwt from "jsonwebtoken";
+const authInfo = jwt.decode(`${localStorage.getItem("token")}`);
 
 const theme = extendTheme({
 	colors: {
@@ -29,7 +31,11 @@ function App() {
 					<Switch>
 						<Route exact path="/" component={Home} />
 						<Route exact path="/history" component={History} />
-						<Route exact path="/profile" component={Profile} />
+						<Route
+							exact
+							path="/profile"
+							component={authInfo ? Profile : NotFoundPage}
+						/>
 						<Route exact path="/signup" component={Signup} />
 						<Route exact path="/top-artists" component={TopArtists} />
 						<Route path="*" exact={true} component={NotFoundPage} />

@@ -21,6 +21,7 @@ import { MdHome } from "react-icons/md";
 import "./Navbar.css";
 import NavSearch from "./NavSearch";
 import useAuth from "../../customHooks/useAuth";
+
 function Navbar(props: any) {
 	const { isOpen, onOpen, onClose } = useDisclosure();
 	const location = useLocation();

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import jwt from "jsonwebtoken";
-import "dotenv";
 
 function useAuth() {
 	interface authInfo {}
